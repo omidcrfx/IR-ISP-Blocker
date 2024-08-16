@@ -24,6 +24,8 @@ function main_menu {
     echo "8-MobinNet"
     echo "9-ParsOnline"
     echo "10-Exit"
+    echo "11-Respina"
+
     read -p "Enter your choice: " isp
     case $isp in
     1) isp="MCI" blocking_menu ;;
@@ -36,6 +38,7 @@ function main_menu {
     8) isp="MobinNet" blocking_menu ;;
     9) isp="ParsOnline" blocking_menu ;;
     10) echo "Exiting..."; exit 0 ;;
+    11) isp="Respina" blocking_menu ;;
     *) echo "Invalid option"; main_menu ;;
     esac
 }
@@ -106,6 +109,9 @@ function blocker {
             ;;
         "ParsOnline")
             IP_LIST=$(curl -s 'https://raw.githubusercontent.com/Kiya6955/IR-ISP-Blocker/main/parsan-ips.ipv4')
+            ;;
+        "Respina")
+            IP_LIST=$(curl -s 'https://raw.githubusercontent.com/omidcrfx/IR-ISP-Blocker/main/Respina.ipv4')
             ;;
         esac
 
